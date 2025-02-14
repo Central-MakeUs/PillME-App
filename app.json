@@ -4,11 +4,11 @@
     "slug": "PillME-App",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/splash-icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/스플래쉬.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
