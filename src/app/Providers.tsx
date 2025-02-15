@@ -27,9 +27,13 @@ export const Provider = (props: PropsWithChildren) => {
 
 const FontProvider = ({ children }: PropsWithChildren) => {
   useEffect(() => {
-    setTimeout(() => {
-      SplashScreen.hideAsync();
-    }, 2000);
+    async function hideSplashAfterDelay() {
+      await SplashScreen.preventAutoHideAsync();
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+      await SplashScreen.hideAsync();
+    }
+
+    hideSplashAfterDelay();
   }, []);
 
   return children;
