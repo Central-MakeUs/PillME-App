@@ -35,7 +35,7 @@ export default function App() {
 
     const url = navState.url;
     if (url === 'https://d2jk5p6q83gaab.cloudfront.net/') {
-      setBgColor('#D6E4FF');
+      setBgColor('#E5EBFF');
     } else if (url.includes('home')) {
       setBgColor('#F4F8FF');
     } else {
