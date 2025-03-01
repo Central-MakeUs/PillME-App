@@ -13,6 +13,7 @@
     "@suspensive/react": "^2.18.12",
     "@webview-bridge/react-native": "^1.7.5",
     "expo": "~52.0.25",
+    "expo-build-properties": "~0.13.2",
     "expo-clipboard": "^7.0.1",
     "expo-splash-screen": "^0.29.22",
     "expo-status-bar": "~2.0.1",
