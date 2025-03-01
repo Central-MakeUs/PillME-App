@@ -25,19 +25,21 @@
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-build-properties",
-      {
-        "ios": {
-          "infoPlist": {
-            "NSAppTransportSecurity": {
-              "NSAllowsArbitraryLoads": true
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "infoPlist": {
+              "NSAppTransportSecurity": {
+                "NSAllowsArbitraryLoads": true
+              }
             }
+          },
+          "android": {
+            "usesCleartextTraffic": true
           }
-        },
-        "android": {
-          "usesCleartextTraffic": true
         }
-      }
+      ]
     ]
   }
 }
