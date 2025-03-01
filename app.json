@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "PillME-App",
-    "slug": "PillME-App",
+    "name": "PillME",
+    "slug": "PillME",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/splash-icon.png",
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
@@ -13,13 +13,12 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.taekyu.PillME"
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+      "icon": "./assets/playstore-icon.png",
+      "package": "com.taekyu.PillME"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -40,6 +39,12 @@
           }
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "7c3e8861-b963-460f-ac6b-2ec1ffb7cf1d"
+      }
+    },
+    "owner": "taekyu"
   }
 }

@@ -2,7 +2,7 @@ import {
   useSafeAreaInsets,
   SafeAreaProvider,
 } from 'react-native-safe-area-context';
-import { useEffect, useState, type PropsWithChildren } from 'react';
+import { type PropsWithChildren } from 'react';
 import { View } from 'react-native';
 
 export const getInsets = () => {
