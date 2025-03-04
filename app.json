@@ -23,23 +23,6 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": [
-      [
-        "expo-build-properties",
-        {
-          "ios": {
-            "infoPlist": {
-              "NSAppTransportSecurity": {
-                "NSAllowsArbitraryLoads": true
-              }
-            }
-          },
-          "android": {
-            "usesCleartextTraffic": true
-          }
-        }
-      ]
-    ],
     "extra": {
       "eas": {
         "projectId": "7c3e8861-b963-460f-ac6b-2ec1ffb7cf1d"

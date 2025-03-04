@@ -6,10 +6,6 @@ import { Provider } from '~/app/Providers';
 import { WebView as PillMeWebView } from '~/shared/bridge';
 import { SafeAreaContext } from '~/shared/bridge/safe-area';
 
-const BASE_URL = __DEV__
-  ? process.env.EXPO_PUBLIC_DEV_WEBVIEW_URL ?? ''
-  : 'http://d2jk5p6q83gaab.cloudfront.net/';
-
 export default function App() {
   const webViewRef = useRef<WebView>(null);
   const [canGoBack, setCanGoBack] = useState(false);
@@ -34,7 +30,7 @@ export default function App() {
     setCanGoBack(navState.canGoBack);
 
     const url = navState.url;
-    if (url === 'http://d2jk5p6q83gaab.cloudfront.net/') {
+    if (url === 'https://d2jk5p6q83gaab.cloudfront.net/') {
       setBgColor('#E5EBFF');
     } else if (url.includes('home')) {
       setBgColor('#F4F8FF');
@@ -53,7 +49,7 @@ export default function App() {
           <StatusBar style="auto" />
           <PillMeWebView
             ref={webViewRef}
-            source={{ uri: 'http://d2jk5p6q83gaab.cloudfront.net/' }}
+            source={{ uri: 'https://d2jk5p6q83gaab.cloudfront.net/' }}
             style={{ flex: 1 }}
             mixedContentMode={'always'}
             javaScriptEnabled={true}
