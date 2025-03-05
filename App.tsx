@@ -30,7 +30,7 @@ export default function App() {
     setCanGoBack(navState.canGoBack);
 
     const url = navState.url;
-    if (url === 'https://d2jk5p6q83gaab.cloudfront.net/') {
+    if (url === 'https://pillme.kr/') {
       setBgColor('#E5EBFF');
     } else if (url.includes('home')) {
       setBgColor('#F4F8FF');
@@ -49,7 +49,7 @@ export default function App() {
           <StatusBar style="auto" />
           <PillMeWebView
             ref={webViewRef}
-            source={{ uri: 'https://d2jk5p6q83gaab.cloudfront.net/' }}
+            source={{ uri: 'https://pillme.kr/' }}
             style={{ flex: 1 }}
             mixedContentMode={'always'}
             javaScriptEnabled={true}
