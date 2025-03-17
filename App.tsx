@@ -6,6 +6,8 @@ import { Provider } from '~/app/Providers';
 import { WebView as PillMeWebView } from '~/shared/bridge';
 import { SafeAreaContext } from '~/shared/bridge/safe-area';
 
+const BASE_URL = 'https://pillme.kr/';
+
 export default function App() {
   const webViewRef = useRef<WebView>(null);
   const [canGoBack, setCanGoBack] = useState(false);
@@ -30,7 +32,7 @@ export default function App() {
     setCanGoBack(navState.canGoBack);
 
     const url = navState.url;
-    if (url === 'https://pillme.kr/') {
+    if (url === BASE_URL) {
       setBgColor('#E5EBFF');
     } else if (url.includes('home')) {
       setBgColor('#F4F8FF');
@@ -49,7 +51,7 @@ export default function App() {
           <StatusBar style="auto" />
           <PillMeWebView
             ref={webViewRef}
-            source={{ uri: 'https://pillme.kr/' }}
+            source={{ uri: BASE_URL }}
             style={{ flex: 1 }}
             mixedContentMode={'always'}
             javaScriptEnabled={true}
