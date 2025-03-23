@@ -56,6 +56,8 @@ export default function App() {
               source={{ uri: BASE_URL }}
               style={{ flex: 1 }}
               mixedContentMode={'always'}
+              bounces={true}
+              scrollEnabled={true}
               javaScriptEnabled={true}
               allowsBackForwardNavigationGestures={true}
               onNavigationStateChange={onNavigationStateChange}
