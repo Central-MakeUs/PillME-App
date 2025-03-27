@@ -5,6 +5,7 @@ import type WebView from 'react-native-webview';
 import { Provider } from '~/app/Providers';
 import { WebView as PillMeWebView } from '~/shared/bridge';
 import { SafeAreaContext } from '~/shared/bridge/safe-area';
+import { RefreshProvider } from '~/shared/pull-to-refresh/RefreshProvider';
 
 const BASE_URL = 'https://pillme.kr/';
 
@@ -43,23 +44,27 @@ export default function App() {
 
   return (
     <Provider>
-      <SafeAreaContext backgroundColor={bgColor}>
-        <KeyboardAvoidingView
-          behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-          style={{ flex: 1 }}
-        >
-          <StatusBar style="auto" />
-          <PillMeWebView
-            ref={webViewRef}
-            source={{ uri: BASE_URL }}
+      <RefreshProvider webViewRef={webViewRef}>
+        <SafeAreaContext backgroundColor={bgColor}>
+          <KeyboardAvoidingView
+            behavior={Platform.OS === 'ios' ? 'padding' : undefined}
             style={{ flex: 1 }}
-            mixedContentMode={'always'}
-            javaScriptEnabled={true}
-            allowsBackForwardNavigationGestures={true}
-            onNavigationStateChange={onNavigationStateChange}
-          />
-        </KeyboardAvoidingView>
-      </SafeAreaContext>
+          >
+            <StatusBar style="auto" />
+            <PillMeWebView
+              ref={webViewRef}
+              source={{ uri: BASE_URL }}
+              style={{ flex: 1 }}
+              mixedContentMode={'always'}
+              bounces={true}
+              scrollEnabled={true}
+              javaScriptEnabled={true}
+              allowsBackForwardNavigationGestures={true}
+              onNavigationStateChange={onNavigationStateChange}
+            />
+          </KeyboardAvoidingView>
+        </SafeAreaContext>
+      </RefreshProvider>
     </Provider>
   );
 }
